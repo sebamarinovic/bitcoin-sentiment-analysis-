@@ -1,73 +1,108 @@
 # 📊 Efecto del Sentimiento en Redes Sociales sobre el Precio del Bitcoin
 
-Este repositorio contiene el código, datos y material asociado al estudio académico:
+Este repositorio contiene el material asociado al estudio académico:
 
 **“Efecto del Sentimiento en Redes Sociales sobre el Precio del Bitcoin”**
 
-El proyecto analiza si el sentimiento expresado en Twitter puede aportar capacidad predictiva sobre el precio futuro de Bitcoin, utilizando técnicas de Procesamiento de Lenguaje Natural (NLP) y modelos de Machine Learning y Deep Learning.
+El objetivo del proyecto es analizar si el sentimiento expresado en redes sociales, específicamente Twitter, puede aportar capacidad predictiva sobre el precio futuro de Bitcoin, utilizando técnicas de Procesamiento de Lenguaje Natural (NLP) y modelos de Machine Learning y Deep Learning.
 
 ---
 
-## 🎯 Objetivo
+## 📁 Contenido del repositorio
 
-Evaluar si la incorporación de variables de sentimiento social mejora la predicción del precio de Bitcoin en horizontes de corto plazo (24 horas), en comparación con modelos basados únicamente en datos históricos de precios.
+El repositorio incluye los siguientes archivos principales:
+
+- **`BTC_Sentiment_Improved_Notebook_v3.ipynb`**  
+  Notebook principal del proyecto. Contiene:
+  - Análisis exploratorio de los datos
+  - Procesamiento y análisis de sentimiento
+  - Construcción de variables
+  - Implementación de modelos predictivos
+  - Evaluación de resultados
+
+- **`BTCUSDT_1h_2021-02-05_2021-08-21.csv`**  
+  Dataset con precios históricos de Bitcoin en intervalo horario (1h), en formato OHLCV:
+  - Open, High, Low, Close, Volume
+
+- **`Efecto_del_Sentimiento_en_Redes_Sociales_sobre_el_Precio_del_Bitcoin.pdf`**  
+  Artículo académico del estudio, donde se describe:
+  - Marco teórico
+  - Metodología
+  - Resultados exploratorios
+  - Discusión, limitaciones y trabajo futuro
+
+- **`README.md`**  
+  Documento descriptivo del proyecto.
+
+---
+
+## 🎯 Objetivo del estudio
+
+Evaluar si el sentimiento promedio extraído desde Twitter puede anticipar variaciones en el precio de Bitcoin en ventanas de corto plazo (24 horas), y determinar si la incorporación de esta información mejora el desempeño de modelos predictivos en comparación con enfoques basados únicamente en datos históricos de precios.
 
 ---
 
 ## 🧠 Metodología
 
-- **Datos**
-  - Tweets relacionados con Bitcoin (Twitter / Kaggle)
-  - Precio de Bitcoin en formato OHLC
-- **NLP**
-  - Análisis de sentimiento con enfoques léxicos (VADER)
-  - Extensión futura con Transformers (BERT / FinBERT)
-- **Modelos**
-  - Regresión Lineal
-  - Random Forest
-  - LSTM (series temporales)
-- **Evaluación**
-  - MAE, MSE, R²
+### 🔹 Datos
+- **Redes sociales:** Tweets relacionados con Bitcoin, procesados para extraer métricas de sentimiento.
+- **Precio:** Serie temporal del precio de Bitcoin en formato OHLC.
+
+### 🔹 Procesamiento de lenguaje natural (NLP)
+- Limpieza y normalización de texto.
+- Análisis de sentimiento mediante enfoques léxicos (baseline).
+- Agregación temporal del sentimiento para su integración con la serie de precios.
+
+### 🔹 Modelos implementados
+- Regresión Lineal
+- Random Forest Regressor
+- Redes neuronales recurrentes **LSTM**, orientadas al modelamiento de series temporales
+
+### 🔹 Evaluación
+- Métricas utilizadas: **MAE, MSE y R²**
+- Comparación entre modelos con y sin variables de sentimiento
 
 ---
 
-## 📁 Estructura del repositorio
+## 📊 Principales hallazgos (resumen)
 
-- `paper/`: artículo académico en PDF  
-- `data/`: datasets (raw y procesados)  
-- `notebooks/`: notebooks Jupyter del flujo completo  
-- `figures/`: visualizaciones y gráficos  
-- `src/`: scripts reutilizables de procesamiento y modelado  
+- El sentimiento social por sí solo no actúa como un predictor robusto del precio.
+- Sin embargo, cuando se incorpora como variable adicional, puede aportar señal complementaria en ciertos períodos.
+- Los modelos LSTM muestran un mejor desempeño para capturar dependencias temporales complejas en comparación con modelos tradicionales.
 
 ---
 
-## ⚠️ Consideraciones
+## ⚠️ Limitaciones
 
-- El dataset de Twitter puede contener ruido y actividad automatizada (bots).
-- No se realizó detección explícita de bots; se reconoce como limitación del estudio.
-- El análisis se realiza a nivel agregado para mitigar este efecto.
+- Posible presencia de ruido y actividad automatizada (bots) en los datos de Twitter.
+- Sesgo temporal del período analizado.
+- Limitaciones inherentes a los métodos léxicos de análisis de sentimiento (sarcasmo, jerga).
+- Desfase temporal entre redes sociales y reacción del mercado.
+
+Estas limitaciones se reconocen explícitamente en el artículo académico.
 
 ---
 
 ## 🔮 Trabajo futuro
 
-- Detección explícita de bots (Botometer, anomaly detection)
-- Incorporación de FinBERT
-- Inclusión de datos de Reddit
-- Evaluación de distintos horizontes temporales
+- Incorporar modelos de lenguaje especializados en finanzas (FinBERT).
+- Implementar detección explícita de bots.
+- Integrar otras plataformas sociales como Reddit.
+- Evaluar distintos horizontes temporales de predicción.
 
 ---
 
 ## 👥 Autores
 
-- Sebastián Marinovic Leiva  
-- Ricardo Iván Lizana Aseña  
-- Luis Andrés Gutiérrez González  
+- **Sebastián Marinovic Leiva**  
+- **Ricardo Iván Lizana Aseña**  
+- **Luis Andrés Gutiérrez González**  
 
-Magíster en Data Science – Universidad de Las Américas
+Magíster en Data Science  
+Universidad de Las Américas
 
 ---
 
 ## 📜 Licencia
 
-Este proyecto se distribuye bajo licencia MIT.
+Este repositorio se publica con fines académicos y educativos.
