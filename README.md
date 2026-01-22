@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)](https://jupyter.org/)
 
-> **Tesis de Magíster en Data Science** — Universidad de Las Américas (UDLA), Chile (Enero 2026).  
+> **Proyecto final Investigación de Magíster en Data Science** — Universidad de Las Américas (UDLA), Chile (Enero 2026).  
 > Este repositorio contiene el **paper** y el **script reproducible** que genera **figuras/tablas** para el estudio.
 
 ---
