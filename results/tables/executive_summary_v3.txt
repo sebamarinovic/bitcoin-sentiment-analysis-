@@ -1,0 +1,46 @@
+================================================================================
+            RESUMEN EJECUTIVO - FinBERT + PCA (v3.0)
+================================================================================
+
+DATOS:
+- Tweets analizados: 904,427
+- Período: 2021-02-07 a 2021-08-20
+- Observaciones para modelado: 1,449
+
+MÉTODOS DE SENTIMIENTO:
+- VADER: mean = 0.2452
+- FinBERT: mean = 0.0614
+- RoBERTa: mean = 0.2205
+
+PCA:
+- VADER PCA varianza explicada: 83.6%
+- FinBERT PCA varianza explicada: 79.2%
+- Combinado PCA varianza explicada: 76.9%
+
+RESULTADOS RANDOM FOREST (MAE, horizonte 24h):
+   PCA_ALL        : 0.0586 ← MEJOR RF
+   PCA_VADER      : 0.0598
+   FinBERT        : 0.0604
+   BASE           : 0.0610
+   PCA_FinBERT    : 0.0611
+   VADER          : 0.0620
+
+RESULTADOS LSTM (MAE, horizonte 24h):
+   PCA_FinBERT    : 0.0316 (R²=-0.4488) ← MEJOR MODELO
+   PCA_ALL        : 0.0381 (R²=-1.0929)
+   BASE           : 0.0388 (R²=-1.2418)
+   FinBERT        : 0.0409 (R²=-1.6343)
+
+CORRELACIÓN SPEARMAN (sentimiento vs retornos 24h):
+   VADER          : ρ = 0.0271 (p = 0.302) - No significativo
+   FinBERT        : ρ = 0.1133 (p = 1.53e-05) - Muy significativo ***
+   PCA_ALL PC1    : ρ = 0.0835 (p = 1.47e-03) - Significativo **
+   PCA_ALL PC3    : ρ = -0.0983 (p = 1.77e-04) - Muy significativo ***
+
+CONCLUSIÓN:
+- Mejor RF: PCA_ALL (MAE=0.0586, mejora 3.93% vs BASE)
+- Mejor LSTM: PCA_FinBERT (MAE=0.0316, mejora 18.56% vs BASE)
+- FinBERT captura correlación 4x más fuerte que VADER con retornos
+- PCA actúa como regularizador, mejorando significativamente LSTM
+
+================================================================================
