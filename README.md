@@ -6,6 +6,10 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Colab](https://img.shields.io/badge/Google%20Colab-Run%20Now-orange.svg)](https://colab.research.google.com/)
 
+<p align="center">
+  <img src="results/figures/fig_scenario_comparison.png" alt="Comparación de Escenarios" width="800"/>
+</p>
+
 ## 📌 Descripción
 
 Este proyecto investiga la capacidad predictiva del sentimiento expresado en Twitter sobre el precio de Bitcoin, comparando métodos tradicionales de análisis de sentimiento (VADER, TextBlob) con modelos de NLP basados en Transformers (FinBERT, Twitter-RoBERTa) y técnicas de reducción de dimensionalidad (PCA).
@@ -87,34 +91,35 @@ Este proyecto investiga la capacidad predictiva del sentimiento expresado en Twi
 ## 📁 Estructura del Proyecto
 
 ```
-bitcoin-sentiment-analysis/
+bitcoin-sentiment-analysis-/
 ├── README.md
 ├── LICENSE
 ├── requirements.txt
 ├── .gitignore
 │
 ├── notebooks/
-│   └── BTC_Sentiment_Analysis.ipynb    # Notebook interactivo
+│   ├── btc_finbert_tft_pca.ipynb           # Notebook FinBERT + PCA
+│   └── btc_sentiment_final_with_pca.ipynb  # Notebook VADER + PCA
 │
 ├── scripts/
-│   ├── btc_sentiment_finbert_pca_v3.py # Script principal (FinBERT + PCA)
-│   └── btc_sentiment_final_with_pca.py # Versión solo VADER + PCA
+│   ├── btc_sentiment_finbert_pca_v3.py     # Script principal (FinBERT + PCA)
+│   └── btc_sentiment_final_with_pca.py     # Script VADER + PCA
 │
 ├── results/
-│   ├── figures/                        # Visualizaciones
+│   ├── figures/
 │   │   ├── fig_scenario_comparison.png
 │   │   ├── fig_pca_variance_comparison.png
 │   │   ├── fig_pca_loadings_combined.png
 │   │   ├── fig_lstm_learning_curves.png
 │   │   └── fig_lstm_predictions.png
-│   └── tables/                         # Resultados numéricos
+│   └── tables/
 │       ├── mae_comparison.csv
 │       ├── pca_loadings_combined.csv
 │       ├── results_all_scenarios.csv
 │       └── executive_summary_v3.txt
 │
 └── paper/
-    └── main.tex                        # Paper LaTeX
+    └── main.tex
 ```
 
 ---
