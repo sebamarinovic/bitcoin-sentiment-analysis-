@@ -6,9 +6,6 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Colab](https://img.shields.io/badge/Google%20Colab-Run%20Now-orange.svg)](https://colab.research.google.com/)
 
-<p align="center">
-  <img src="results/figures/fig_scenario_comparison.png" alt="Comparación de Escenarios" width="800"/>
-</p>
 
 ## 📌 Descripción
 
