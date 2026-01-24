@@ -116,7 +116,7 @@ bitcoin-sentiment-analysis-/
 │       └── executive_summary_v3.txt
 │
 └── paper/
-    └── main.tex
+    └── Efecto_del_Sentimiento_en_Redes_Sociales_sobre_el_Precio_del_Bitcoin.pdf
 ```
 
 ---
