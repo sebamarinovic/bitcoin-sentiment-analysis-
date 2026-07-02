@@ -155,6 +155,19 @@ TEXT_CANDS = ["cleanText", "text", "tweet", "content", "Text", "body"]
 time_col = next((c for c in TIME_CANDS if c in df_tw.columns), None)
 text_col = next((c for c in TEXT_CANDS if c in df_tw.columns), None)
 
+missing_required_columns = []
+if time_col is None:
+    missing_required_columns.append("timestamp")
+if text_col is None:
+    missing_required_columns.append("text")
+if missing_required_columns:
+    available_columns = ", ".join(df_tw.columns)
+    missing_columns = ", ".join(missing_required_columns)
+    raise ValueError(
+        f"No se encontraron columnas requeridas ({missing_columns}). "
+        f"Columnas disponibles: {available_columns}"
+    )
+
 print(f"   Columna temporal: {time_col}")
 print(f"   Columna texto: {text_col}")
 
